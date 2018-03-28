@@ -1,51 +1,42 @@
 ---------
 mnscripts
 ---------
-Version: 0.1.1.3
-Scripts for installing and updating masternode coins such as ChainCoin and ArcticCoin easily. Installs Masternode, generate a key and the conf line for you.
+Version: 0.0.0.1
+Scripts for installing masternode coins such as ChainCoin Testnet easily. Installs Masternode and most likely does it wrong for you.
+
+But dont try it, cause it does not work... yet! 
+
 Experimental script, use at your own risk!!!
 
 ----------------
 Supported coins
 ----------------
--ChainCoin, Social Send
+-ChainCoin Testnet
 
 ---------------
 Tested Systems: 
 ---------------
--Ubuntu 17.10, 17.04, 16.04, 14.04
+-None
 
 Please choose a test system from above.
 On a brand new VPS copy and paste the following line and press ENTER:
 
 Examples:
-(ChainCoin) (New! No more genkey as input!)
+(ChainCoin Testnet) 
 
-curl https://raw.githubusercontent.com/chaoabunga/mnscripts/master/install-chc.sh | bash
-
-
-(SocialSend) (New! Website, shorter 1-liner, send.nodes.mn)
-
-curl send.nodes.mn/install.sh | bash 
-
-
-----------------------------------------------------
-For update
-----------------------------------------------------
-
-curl https://raw.githubusercontent.com/chaoabunga/mnscripts/master/update-chc.sh | bash
-
+curl https://raw.githubusercontent.com/seekthex/mnscripts/master/install-chc-testnet.sh | bash
 
 **********
 
 Donations:  
-Bitcoin:    15Jhcshv7qFAHmGG731xbtt67bB5gcEJ96
+Bitcoin:    <--- Really you are too kind    
 
-Chaincoin:  Cd7dPp1vC9L5fWtC1WtGpmXbjSpwgAyaq7
+Chaincoin:  
 
-SocialSend: SPsmrViyWRjqD8ngdmHMxpJz6AUcerHWtc
+SocialSend: <--- Keep it I dont want it!
 
+Many thanks for Fellowserf, Chaoabunga, Suprnurd, Hashunlimited and the CHC Community
 
-            
+Check out my masters site!! I am just a young padawan            
 Live stream help and video for masternodes: https://www.youtube.com/c/chaoabunga
 1-liner masternode install scripts, faucets and more at: https://nodes.mn
