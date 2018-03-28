@@ -1,11 +1,10 @@
 #!/bin/sh
-#Version 0.1.1.3
+#Version 0.0.0.1
 #Info: Installs Chaincoind daemon, Masternode based on privkey, and a simple web monitor.
-#Chaincoin Version 0.9.3 or above
-#Tested OS: Ubuntu 17.04, 16.04, and 14.04
-#TODO: make script less "ubuntu" or add other linux flavors
-#TODO: remove dependency on sudo user account to run script (i.e. run as root and specifiy chaincoin user so chaincoin user does not require sudo privileges)
-#TODO: add specific dependencies depending on build option (i.e. gui requires QT4)
+#Chaincoin Testnet Version 0.16.x 
+#Tested OS: None
+#TODO: everything
+#TODO: 
 
 noflags() {
 	echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
@@ -113,18 +112,18 @@ createhttp() {
 }
 
 success() {
-	chaincoind
-	message "SUCCESS! Your chaincoind has started. Masternode.conf setting below..."
-	message "MN $mnip:11994 $MNPRIVKEY TXHASH INDEX"
+#	chaincoind
+	message "SUCCESS you ran some code, feel safe, be happy"
+#	message "MN $mnip:11994 $MNPRIVKEY TXHASH INDEX"
 	exit 0
 }
 
 install() {
-	prepdependencies
-	createswap
-	clonerepo
-	compile $1
-	createconf
+#	prepdependencies
+#	createswap
+#	clonerepo
+#	compile $1
+#	createconf
 	success
 }
 
