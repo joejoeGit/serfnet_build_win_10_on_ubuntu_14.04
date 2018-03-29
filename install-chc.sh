@@ -253,7 +253,7 @@ success() {
 
 install() {
 	#createfirewall
-	createswap
+	#createswap
         prepdependencies
 	success
 }
