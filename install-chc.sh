@@ -107,7 +107,10 @@ prepdependencies() { #TODO: add error detection
 #Build Berkly Database 
 #----------------------------------
 cd ~
-mkdir bitcoin/db4/
+mkdir bitcoin
+cd bitcoin
+mkdir db4
+cd ~
 wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
 tar -xzvf db-4.8.30.NC.tar.gz
 cd db-4.8.30.NC/build_unix/
