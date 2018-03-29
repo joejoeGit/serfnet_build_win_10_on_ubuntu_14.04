@@ -8,28 +8,49 @@
 
 
 message() {
+
 	echo "╒════════════════════════════════════════════════════════>>>"
 	echo "| $1"
 	echo "╘════════════════════════════════════════════════════════<<<"
 }
 
+
 createfirewall() {
 	
 	sudo ufw allow OpenSSH
+
 	sudo ufw allow 21994
+	
 	sudo ufw allow 21994
+	
 	sudo ufw default deny incoming
+	
 	sudo ufw default allow outgoing
+	
 	sudo ufw enable 
+	
 	sudo reboot
 }
+
+
 createswap() { #TODO: add error detection
+
 	message "Creating 2GB permament swap file...this may take a few minutes..."
-	sudo dd if=/dev/zero of=/swapfile bs=1M count=2000
+	
+	sudo dd if=/dev/zero of=/swapfile bs=1M count=2000	
+
 	sudo mkswap /swapfile
+
 	sudo chown root:root /swapfile
+
 	sudo chmod 0600 /swapfile
+
 	sudo swapon /swapfile
+
+	sudo chmod 0600 /swapfile
+
+	sudo chown root:root /swapfile
+
 	sudo echo "/swapfile none swap sw 0 0" >> /etc/fstab
 }
 
@@ -40,30 +61,61 @@ createswap() { #TODO: add error detection
 
 
 
-noflags() {
-	echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
-    echo "Usage: install-chc"
-    echo "Example: install-chc"
-    echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
-    exit 1
-}
-
-
-
-error() {
-	message "An error occured, you must fix it to continue!"
-	exit 1
-}
-
 
 prepdependencies() { #TODO: add error detection
+
+
 	message "Installing dependencies..."
+	
+	
+	# General
+	sudo apt update
+	sudo apt-get install build-essential 
+	sudo apt-get install autotools-dev              
+	sudo apt-get install automake pkg-config
+	sudo apt-get install libssl-dev 
+	sudo apt-get install libevent-dev
+	sudo apt-get install bsdmainutils
+	sudo apt-get install  git
+
+	# Boost C macros - Bitcoin core trying to remove this	
+
+	sudo apt-get install 
+	sudo apt-get install libboost-system-dev 
+	sudo apt-get install libboost-filesystem-dev 
+	sudo apt-get install libboost-chrono-dev 
+	sudo apt-get install libboost-program-options-dev 
+	sudo apt-get install libboost-test-dev 
+	sudo apt-get install libboost-thread-dev	
+
+	# Berkeley Db - Some duplication - script is used later
+	sudo apt-get install software-properties-common
+	sudo add-apt-repository ppa:bitcoin/bitcoin
 	sudo apt-get update
-	sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
-	sudo apt-get install automake libdb++-dev build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev libminiupnpc-dev git software-properties-common python-software-properties g++ bsdmainutils libevent-dev -y
-	sudo add-apt-repository ppa:bitcoin/bitcoin -y
-	sudo apt-get update
-	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+	sudo apt-get install libdb4.8-dev libdb4.8++-dev
+
+	# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
+	sudo apt-get install libminiupnpc-dev
+
+	# zero message queue
+	sudo apt-get install libzmq3-dev
+
+
+#########################additional stuf for QT wallet#######
+# QT5 - QT Wallet
+#sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+# QR
+#sudo apt-get install libqrencode-dev
+#############################################################
+
+#########################Chaos install#######################
+#	sudo apt-get update
+#	sudo DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
+#	sudo apt-get install automake libdb++-dev build-essential libtool autotools-dev autoconf pkg-config libssl-dev libboost-all-dev libminiupnpc-dev git software-properties-common python-software-properties g++ bsdmainutils libevent-dev -y
+#	sudo add-apt-repository ppa:bitcoin/bitcoin -y
+#	sudo apt-get update
+#	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+#############################################################
 }
 
 
@@ -130,6 +182,22 @@ createhttp() {
 	echo "Web Server Started!  You can now access your stats page at http://$mnip:8000"
 }
 
+noflags() {
+	echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
+    echo "Usage: install-chc"
+    echo "Example: install-chc"
+    echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
+    exit 1
+}
+
+
+
+error() {
+	message "An error occured, you must fix it to continue!"
+	exit 1
+}
+
+
 success() {
 #	chaincoind
 	message "SUCCESS you ran some code, feel safe, be happy"
@@ -141,7 +209,7 @@ success() {
 install() {
 #	createfirewall
 #	createswap
-
+        prepdependencies
 
 
 	success
