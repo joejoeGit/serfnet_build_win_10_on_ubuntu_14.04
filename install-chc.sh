@@ -19,7 +19,7 @@ createfirewall() {
 
 	sudo ufw allow 21994
 	
-	sudo ufw allow 21994
+	sudo ufw allow 21995
 	
 	sudo ufw default deny incoming
 	
@@ -27,7 +27,7 @@ createfirewall() {
 	
 	sudo ufw enable 
 	
-	sudo reboot
+	#sudo reboot
 }
 
 
@@ -252,7 +252,7 @@ success() {
 
 
 install() {
-	createfirewall
+	#createfirewall
 	createswap
         prepdependencies
 	success
