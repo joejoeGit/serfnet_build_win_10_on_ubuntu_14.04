@@ -1,8 +1,8 @@
 #!/bin/sh
 #Version 0.0.0.1
-#Info: Installs Chaincoind daemon, Masternode based on privkey, and a simple web monitor.
+#Info: Installs Chaincoind daemon
 #Chaincoin Testnet Version 0.16.x 
-#Tested OS: None
+#Testing OS: Ubuntu 16.04 
 #TODO: everything
 #TODO: 
 
@@ -70,26 +70,25 @@ prepdependencies() { #TODO: add error detection
 	
 	# General
 	sudo apt update
-	sudo apt-get install build-essential 
-	sudo apt-get install autotools-dev              
-	sudo apt-get install automake pkg-config
-	sudo apt-get install libssl-dev 
-	sudo apt-get install libevent-dev
-	sudo apt-get install bsdmainutils
-	sudo apt-get install  git
+	sudo apt-get install build-essential -y
+	sudo apt-get install autotools-dev -y           
+	sudo apt-get install automake pkg-config -y
+	sudo apt-get install libssl-dev -y
+	sudo apt-get install libevent-dev -y
+	sudo apt-get install bsdmainutils -y
+	sudo apt-get install  git -y
 
 	# Boost C macros - Bitcoin core trying to remove this	
-
-	sudo apt-get install 
-	sudo apt-get install libboost-system-dev 
-	sudo apt-get install libboost-filesystem-dev 
-	sudo apt-get install libboost-chrono-dev 
-	sudo apt-get install libboost-program-options-dev 
-	sudo apt-get install libboost-test-dev 
-	sudo apt-get install libboost-thread-dev	
+	
+	sudo apt-get install libboost-system-dev -y
+	sudo apt-get install libboost-filesystem-dev -y
+	sudo apt-get install libboost-chrono-dev -y
+	sudo apt-get install libboost-program-options-dev -y
+	sudo apt-get install libboost-test-dev -y
+	sudo apt-get install libboost-thread-dev -y	
 
 	# Berkeley Db - Some duplication - script is used later
-	sudo apt-get install software-properties-common
+	sudo apt-get install software-properties-common 
 	sudo add-apt-repository ppa:bitcoin/bitcoin
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev
@@ -100,7 +99,15 @@ prepdependencies() { #TODO: add error detection
 	# zero message queue
 	sudo apt-get install libzmq3-dev
 
+git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
+cd ChainCoin
+./autogen.sh
 
+sudo ./contrib/install_db4.sh berkeley48
+export BDB_PREFIX='/db4'
+
+./configure CPPFLAGS="-I${BDB_PREFIX}/include/ -O2 -fPIC" LDFLAGS="-L${BDB_PREFIX}/lib/" --disable-tests
+ 
 #########################additional stuf for QT wallet#######
 # QT5 - QT Wallet
 #sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
