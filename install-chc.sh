@@ -6,6 +6,28 @@
 #TODO: everything
 #TODO: 
 
+createfirewall() {
+	
+	sudo ufw allow OpenSSH
+	sudo ufw allow 21994
+	sudo ufw allow 21994
+	sudo ufw default deny incoming
+	sudo ufw default allow outgoing
+	sudo ufw enable 
+	sudo reboot
+}
+
+createswap() { #TODO: add error detection
+	message "Creating 2GB permament swap file...this may take a few minutes..."
+	sudo dd if=/dev/zero of=/swapfile bs=1M count=2000
+	sudo mkswap /swapfile
+	sudo chown root:root /swapfile
+	sudo chmod 0600 /swapfile
+	sudo swapon /swapfile
+	sudo echo "/swapfile none swap sw 0 0" >> /etc/fstab
+}
+
+
 noflags() {
 	echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
     echo "Usage: install-chc"
@@ -36,17 +58,6 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 }
 
-createswap() { #TODO: add error detection
-	message "Creating 2GB temporary swap file...this may take a few minutes..."
-	sudo dd if=/dev/zero of=/swapfile bs=1M count=2000
-	sudo mkswap /swapfile
-	sudo chown root:root /swapfile
-	sudo chmod 0600 /swapfile
-	sudo swapon /swapfile
-
-	#make swap permanent
-	sudo echo "/swapfile none swap sw 0 0" >> /etc/fstab
-}
 
 clonerepo() { #TODO: add error detection
 	message "Cloning from github repository..."
@@ -119,11 +130,11 @@ success() {
 }
 
 install() {
-#	prepdependencies
-#	createswap
-#	clonerepo
-#	compile $1
-#	createconf
+
+	createswap
+
+
+
 	success
 }
 
