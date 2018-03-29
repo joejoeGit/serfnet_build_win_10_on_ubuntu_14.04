@@ -106,7 +106,19 @@ cd ChainCoin
 sudo ./contrib/install_db4.sh berkeley48
 export BDB_PREFIX='/db4'
 
-./configure CPPFLAGS="-I${BDB_PREFIX}/include/ -O2 -fPIC" LDFLAGS="-L${BDB_PREFIX}/lib/" --disable-tests
+#./configure -fPIC --disable-tests
+
+#make
+
+#sudo make install
+
+
+
+
+
+
+
+
  
 #########################additional stuf for QT wallet#######
 # QT5 - QT Wallet
