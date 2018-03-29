@@ -68,11 +68,21 @@ prepdependencies() { #TODO: add error detection
 	message "Installing dependencies..."
 	
 	
+	
+	apt-get install libtool autotools-dev autoconf automake -y
+	
+	
 	# General
 	sudo apt update
 	sudo apt-get install build-essential -y
 	sudo apt-get install autotools-dev -y           
-	sudo apt-get install automake pkg-config -y
+	
+	
+	###not sure which one here
+	#sudo apt-get install automake pkg-config -y
+	sudo apt-get install automake -y
+	
+	
 	sudo apt-get install libssl-dev -y
 	sudo apt-get install libevent-dev -y
 	sudo apt-get install bsdmainutils -y
@@ -92,21 +102,38 @@ prepdependencies() { #TODO: add error detection
 	sudo add-apt-repository ppa:bitcoin/bitcoin
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev
+	
+	
+####### may want to comple my own berkly dB
+#----------------------------------
+#Build Berkly Database 
+#----------------------------------
+#cd ~
+#mkdir bitcoin/db4/
+#wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
+#tar -xzvf db-4.8.30.NC.tar.gz
+#cd db-4.8.30.NC/build_unix/
+#../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/home/theusername/bitcoin/db4/
+#make install
+	
+	
+	
+	
+	
+##############stuff for qt wallet
+# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
+#sudo apt-get install libminiupnpc-dev
+# zero message queue
+#sudo apt-get install libzmq3-dev
 
-	# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
-	sudo apt-get install libminiupnpc-dev
 
-	# zero message queue
-	sudo apt-get install libzmq3-dev
+#cd ChainCoin
+#./autogen.sh
 
-git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
-cd ChainCoin
-./autogen.sh
+#sudo ./contrib/install_db4.sh berkeley48
+#export BDB_PREFIX='/db4'
 
-sudo ./contrib/install_db4.sh berkeley48
-export BDB_PREFIX='/db4'
-
-#./configure -fPIC --disable-tests
+# ./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
 
 #make
 
