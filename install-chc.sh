@@ -6,6 +6,13 @@
 #TODO: everything
 #TODO: 
 
+
+message() {
+	echo "╒════════════════════════════════════════════════════════>>>"
+	echo "| $1"
+	echo "╘════════════════════════════════════════════════════════<<<"
+}
+
 createfirewall() {
 	
 	sudo ufw allow OpenSSH
@@ -16,7 +23,6 @@ createfirewall() {
 	sudo ufw enable 
 	sudo reboot
 }
-
 createswap() { #TODO: add error detection
 	message "Creating 2GB permament swap file...this may take a few minutes..."
 	sudo dd if=/dev/zero of=/swapfile bs=1M count=2000
@@ -28,6 +34,12 @@ createswap() { #TODO: add error detection
 }
 
 
+
+
+
+
+
+
 noflags() {
 	echo "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"
     echo "Usage: install-chc"
@@ -36,11 +48,7 @@ noflags() {
     exit 1
 }
 
-message() {
-	echo "╒════════════════════════════════════════════════════════════════════════════════>>"
-	echo "| $1"
-	echo "╘════════════════════════════════════════════<<<"
-}
+
 
 error() {
 	message "An error occured, you must fix it to continue!"
@@ -129,9 +137,10 @@ success() {
 	exit 0
 }
 
-install() {
 
-	createswap
+install() {
+#	createfirewall
+#	createswap
 
 
 
