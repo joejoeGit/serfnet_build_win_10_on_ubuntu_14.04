@@ -16,8 +16,6 @@ message() {
 
 
 createfirewall() {
-	
-	sudo ufw allow OpenSSH
 
 	sudo ufw allow 21994
 	
