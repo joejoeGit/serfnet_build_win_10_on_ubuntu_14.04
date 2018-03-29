@@ -24,7 +24,7 @@ On a brand new VPS copy and paste the following line and press ENTER:
 Examples:
 (ChainCoin Testnet) 
 
-curl https://raw.githubusercontent.com/seekthex/mnscripts/master/install-chc-testnet.sh | bash
+curl https://raw.githubusercontent.com/seekthex/mnscripts/master/install-chc.sh | bash
 
 **********
 
