@@ -116,7 +116,7 @@ success() {
 
 install() {
 	#createfirewall
-	#createswap
+	createswap
         prepdependencies
 	#makeboost
 	#makeberklydb
