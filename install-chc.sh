@@ -66,7 +66,8 @@ prepdependencies() { #TODO: add error detection
 	message "Installing dependencies..."	
 	# General
 	sudo apt update
-	sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 git
+	sudo apt-get git
+	sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 
 	# Boost C macros - Bitcoin core trying to remove this
 	sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
 	# Berkeley Db - Some duplication - script is used later
