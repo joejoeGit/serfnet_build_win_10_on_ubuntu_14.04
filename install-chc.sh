@@ -71,7 +71,7 @@ prepdependencies() { #TODO: add error detection
 	
 	
 	# General
-	sudo apt update
+	apt-get update 
 	sudo apt-get install build-essential -y
 	sudo apt-get install autotools-dev -y           
 	
