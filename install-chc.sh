@@ -116,9 +116,9 @@ success() {
 
 install() {
 	#createfirewall
-	createswap
-        prepdependencies
-	#makeboost
+	#createswap
+        $prepdependencies
+	makeboost
 	#makeberklydb
 	#makechaincion
 	success
