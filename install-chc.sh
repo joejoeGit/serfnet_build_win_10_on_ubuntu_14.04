@@ -72,7 +72,6 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev
 	# Berkeley Db - Some duplication - script is used later
 	sudo apt-get install software-properties-common
-	sudo add-apt-repository ppa:bitcoin/bitcoin
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev
 	# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
@@ -88,7 +87,7 @@ prepdependencies() { #TODO: add error detection
 	cd ChainCoin
 	./autogen.sh
 	sudo ./contrib/install_db4.sh berkeley48
-	export BDB_PREFIX='/db4'
+	export BDB_PREFIX='/db4'ls
 	./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
 	make
 	make install
