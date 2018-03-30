@@ -77,8 +77,8 @@ prepdependencies() { #TODO: add error detection
 	
 	
 	###not sure which one here
-	#sudo apt-get install automake pkg-config -y
-	sudo apt-get install automake -y
+	sudo apt-get install automake pkg-config -y
+	#sudo apt-get install automake -y
 	
 	
 	sudo apt-get install libssl-dev -y
