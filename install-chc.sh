@@ -65,7 +65,7 @@ prepdependencies() { #TODO: add error detection
 	
 
 
-makeboost{
+makeboost(){
 	#Linux Distrobution specific (Ubuntu 14.04+ Debinan 7+)
 	sudo apt-get install 
 	sudo apt-get libboost-system-dev 
@@ -84,7 +84,7 @@ makeboost{
 
 
 
-makeberklydb{
+makeberklydb(){
 
 	# Linux (Ubuntu Only) BerkeleyDb Install
 	sudo apt-get install software-properties-common #on bitcoin instructions not dash?
@@ -96,7 +96,7 @@ makeberklydb{
 
 
 
-makechaincoin{
+makechaincoin(){
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
 	cd ChainCoin
 	./autogen.sh
