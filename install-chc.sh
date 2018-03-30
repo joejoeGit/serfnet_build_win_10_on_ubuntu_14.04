@@ -56,9 +56,9 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install libtool 
 	sudo apt-get install autotools-dev
 	sudo apt-get install automake pkg-config 
-	sudo apt-get installlibssl-dev
+	sudo apt-get install libssl-dev
 	sudo apt-get install libevent-dev 
-	sudo apt-get installbsdmainutils 
+	sudo apt-get install bsdmainutils 
 	sudo apt-get install python3 
 	
 }
