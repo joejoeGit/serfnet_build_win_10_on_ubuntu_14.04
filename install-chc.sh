@@ -71,20 +71,16 @@ prepdependencies() { #TODO: add error detection
 	
 	
 	# General
+	sudo apt-get install  git -y
 	apt-get update 
 	sudo apt-get install build-essential -y
 	sudo apt-get install autotools-dev -y           
-	
-	
-	###not sure which one here
 	sudo apt-get install automake pkg-config -y
-	#sudo apt-get install automake -y
-	
-	
 	sudo apt-get install libssl-dev -y
 	sudo apt-get install libevent-dev -y
 	sudo apt-get install bsdmainutils -y
-	sudo apt-get install  git -y
+	sudo apt-get install libdb4.8-dev 
+
 
 	# Boost C macros - Bitcoin core trying to remove this	
 	
@@ -96,10 +92,9 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install libboost-thread-dev -y	
 
 	# Berkeley Db - Some duplication - script is used later
-	sudo apt-get install software-properties-common 
-	sudo add-apt-repository ppa:bitcoin/bitcoin
-	sudo apt-get update
-	sudo apt-get install libdb4.8-dev libdb4.8++-dev
+#	sudo apt-get install software-properties-common 
+#	sudo add-apt-repository ppa:bitcoin/bitcoin
+#	sudo apt-get update
 	
 	
 ####### may want to comple my own berkly dB
