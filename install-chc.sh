@@ -95,27 +95,27 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install libboost-test-dev -y
 	sudo apt-get install libboost-thread-dev -y	
 
-#	# Berkeley Db - Some duplication - script is used later
-#	sudo apt-get install software-properties-common 
-#	sudo add-apt-repository ppa:bitcoin/bitcoin
-#	sudo apt-get update
-#	sudo apt-get install libdb4.8-dev libdb4.8++-dev
+	# Berkeley Db - Some duplication - script is used later
+	sudo apt-get install software-properties-common 
+	sudo add-apt-repository ppa:bitcoin/bitcoin
+	sudo apt-get update
+	sudo apt-get install libdb4.8-dev libdb4.8++-dev
 	
 	
 ####### may want to comple my own berkly dB
 #----------------------------------
 #Build Berkly Database 
 #----------------------------------
-cd ~
-mkdir bitcoin
-cd bitcoin
-mkdir db4
-cd ~
-wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
-tar -xzvf db-4.8.30.NC.tar.gz
-cd db-4.8.30.NC/build_unix/
-../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/root/bitcoin/db4/
-make install
+#cd ~
+#mkdir bitcoin
+#cd bitcoin
+#mkdir db4
+#cd ~
+#wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
+#tar -xzvf db-4.8.30.NC.tar.gz
+#cd db-4.8.30.NC/build_unix/
+#../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/root/bitcoin/db4/
+#make install
 
 	
 ##############stuff for qt wallet
@@ -130,13 +130,13 @@ make install
 # ./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
 
 #--------------------------------------------------
-Build Chaincoin
-git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
-cd ChainCoin
-./autogen.sh
-./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
-make
-sudo make install
+#Build Chaincoin
+#git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
+#cd ChainCoin
+#./autogen.sh
+#./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
+#make
+#sudo make install
 
 
 #--------------------------------------------------
