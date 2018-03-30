@@ -65,22 +65,22 @@ prepdependencies() { #TODO: add error detection
 	
 
 
-makeboost(){
-	#Linux Distrobution specific (Ubuntu 14.04+ Debinan 7+)
-	sudo apt-get install 
-	sudo apt-get libboost-system-dev 
-	sudo apt-get libboost-filesystem-dev 
-	sudo apt-get libboost-chrono-dev
-	sudo apt-get libboost-program-options-dev
-	sudo apt-get libboost-test-dev
-	sudo apt-get libboost-thread-dev
-	#option 2. if install all boost development packages with
-	#sudo apt-get intall libboost-al-dev
-	#option 3.  build boost yourself
-	#sudo su
-	#./bootrap.sh
-	#./bjam intall
-}
+#makeboost(){
+#	#Linux Distrobution specific (Ubuntu 14.04+ Debinan 7+)
+#	sudo apt-get install 
+#	sudo apt-get libboost-system-dev 
+#	sudo apt-get libboost-filesystem-dev 
+#	sudo apt-get libboost-chrono-dev
+#	sudo apt-get libboost-program-options-dev
+#	sudo apt-get libboost-test-dev
+#	sudo apt-get libboost-thread-dev
+#	#option 2. if install all boost development packages with
+#	#sudo apt-get intall libboost-al-dev
+#	#option 3.  build boost yourself
+#	#sudo su
+#	#./bootrap.sh
+#	#./bjam intall
+#}
 
 
 
