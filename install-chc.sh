@@ -75,26 +75,28 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev
 	# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
-	sudo apt-get install libminiupnpc-dev
+	#sudo apt-get install libminiupnpc-dev
 	# zero message queue
-	sudo apt-get install libzmq3-dev
+	#sudo apt-get install libzmq3-dev
 	# QT5 - QT Wallet
-	sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
+	#sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler
 	# QR
-	sudo apt-get install libqrencode-dev
+	#sudo apt-get install libqrencode-dev
+
+	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
+	cd ChainCoin
+	./autogen.sh
+	sudo ./contrib/install_db4.sh berkeley48
+	export BDB_PREFIX='/db4'
+	./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
+	make
+	make install
+
 }
 	
 
 
-#--------------------------------------------------
-#Build Chaincoin
-#git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
-#cd ChainCoin
-#./autogen.sh
-#./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
-#make
-#sudo make install
-
+#------------------------------------------------
 
 #--------------------------------------------------
 
