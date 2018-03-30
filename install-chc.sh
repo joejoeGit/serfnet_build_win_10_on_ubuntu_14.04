@@ -10,7 +10,7 @@
 message() {
 
 	echo "╒════════════════════════════════════════════════════════>>>"
-	echo "| $1"
+	echo "| $1" BAAAHHH!!!
 	echo "╘════════════════════════════════════════════════════════<<<"
 }
 
@@ -28,7 +28,7 @@ createfirewall() {
 
 
 createswap() { #TODO: add error detection
-	message "Creating 2GB permament swap file...this may take a few minutes..."
+	message "Creating 2GB permament swap file...wati a minutes.."
 	sudo dd if=/dev/zero of=/swapfile bs=1M count=2000	
 	sudo mkswap /swapfile
 	sudo chown root:root /swapfile
@@ -87,7 +87,7 @@ makeboost{
 makeberklydb{
 
 	# Linux (Ubuntu Only) BerkeleyDb Install
-	sudo apt-get install software-properties-common
+	sudo apt-get install software-properties-common #on bitcoin instructions not dash?
 	sudo add-apt-repository ppa:bitcoin/bitcoin
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev
