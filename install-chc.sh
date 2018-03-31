@@ -65,10 +65,10 @@ prepdependencies() { #TODO: add error detection
 	#Chao's extras
 	DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
 	sudo apt-get install autoconf -y #not in bitcoin or dash instructions
-	sudo apt-get install ++-dev
-	sudo apt-get install -all-dev
-	sudo apt-get install -dev
-	sudo apt-get install ++
+	sudo apt-get install libdb++-dev
+	sudo apt-get install libboost-all-dev
+	sudo apt-get install libminiupnpc-dev 
+	sudo apt-get install g++
 
 }
 	
