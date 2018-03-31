@@ -53,7 +53,7 @@ prepdependencies() { #TODO: add error detection
 	#Linux Distrobution specific intallation (Unbuntu Debinan)
 	
 	sudo apt-get install build-essential 
-	#sudo apt-get install libtool 
+	sudo apt-get install libtool 
 	sudo apt-get install autotools-dev
 	sudo apt-get install automake 
         sudo apt-get install pkg-config 
@@ -63,33 +63,33 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install python3 
         
 	#Chao's extras
-	DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
-	sudo apt-get install autoconf -y #not in bitcoin or dash instructions
-	sudo apt-get install libdb++-dev
-	sudo apt-get install libboost-all-dev
-	sudo apt-get install libminiupnpc-dev 
-	sudo apt-get install g++
+	#DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
+	#sudo apt-get install autoconf -y #not in bitcoin or dash instructions
+	#sudo apt-get install libdb++-dev
+	#sudo apt-get install libboost-all-dev
+	#sudo apt-get install libminiupnpc-dev 
+	#sudo apt-get install g++
 
 }
 	
 
 
-#makeboost(){
-#	#Linux Distrobution specific (Ubuntu 14.04+ Debinan 7+)
-#	sudo apt-get install 
-#	sudo apt-get libboost-system-dev 
-#	sudo apt-get libboost-filesystem-dev 
-#	sudo apt-get libboost-chrono-dev
-#	sudo apt-get libboost-program-options-dev
-#	sudo apt-get libboost-test-dev
-#	sudo apt-get libboost-thread-dev
-#	#option 2. if install all boost development packages with
-#	#sudo apt-get intall libboost-al-dev
-#	#option 3.  build boost yourself
-#	#sudo su
-#	#./bootrap.sh
-#	#./bjam intall
-#}
+makeboost(){
+	#Linux Distrobution specific (Ubuntu 14.04+ Debinan 7+)
+	sudo apt-get install 
+	sudo apt-get libboost-system-dev 
+	sudo apt-get libboost-filesystem-dev 
+	sudo apt-get libboost-chrono-dev
+	sudo apt-get libboost-program-options-dev
+	sudo apt-get libboost-test-dev
+	sudo apt-get libboost-thread-dev
+	#option 2. if install all boost development packages with
+	#sudo apt-get intall libboost-al-dev
+	#option 3.  build boost yourself
+	#sudo su
+	#./bootrap.sh
+	#./bjam intall
+}
 
 
 
@@ -125,7 +125,7 @@ success() {
 
 install() {
 	#createfirewall
-	createswap
+	#createswap
 	prepdependencies
 	makeboost
 	makeberklydb
