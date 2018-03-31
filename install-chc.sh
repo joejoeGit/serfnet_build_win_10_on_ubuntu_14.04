@@ -101,12 +101,12 @@ makeboost() {
 
 
 makeberklydb() {
-
+        message "making the berkly..."
 	# Linux (Ubuntu Only) BerkeleyDb Install
-	sudo apt-get install software-properties-common #on bitcoin instructions not dash?
+	sudo apt-get install software-properties-common -y #on bitcoin instructions not dash?
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
 	sudo apt-get update
-	sudo apt-get install libdb4.8-dev libdb4.8++-dev
+	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
 
 }
 
