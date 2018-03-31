@@ -72,6 +72,11 @@ prepdependencies() { #TODO: add error detection
 
 }
 	
+makefish{
+sudo apt-get install nano tmux build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev zip unzip cpulimit ufw git libzmq3-dev
+
+
+}
 
 
 makeboost(){
@@ -126,7 +131,8 @@ success() {
 install() {
 	#createfirewall
 	#createswap
-	prepdependencies
+	#prepdependencies
+	makefish
 	makeboost
 	makeberklydb
 	#makechaincion
