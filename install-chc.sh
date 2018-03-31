@@ -143,6 +143,16 @@ makechaincoin() {
 
 configurechaincoin() {
 
+#daemon=1
+#testnet=1
+#server=1
+#listen=1
+#debug=1
+#prematurewitness=1
+#rpcuser=123
+#rpcpassword=123
+#rpcport=21995
+#addnode=207.246.88.75
 
 
 }
@@ -152,16 +162,17 @@ makesentinel() {
 	message "Makingin the crashy thing..." 
 	sudo apt-get update
 	sudo apt-get -y install python-virtualenv -y
+	sudo apt install virtualenv -y
 	cd ChainCoin
 	git clone https://github.com/chaincoin/sentinel.git && cd sentinel
 	virtualenv ./venv
 	./venv/bin/pip install -r requirements.txt
 	####set up the crontab
 	#crontab -e
-	#* * * * * cd /home/YOURUSERNAME/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1
+	#* * * * * cd /root/ChainCoin/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1
 	###verify the test
-	#./venv/bin/py.test ./test
-	###configure the sentinel
+	#/root/ChainCoin/sentinel/venv/bin/py.test ./test
+	###configure the sentinels
 	##chaincoin_conf=/path/to/chaincoin.conf
 	###run the debug
 	#SENTINEL_DEBUG=1 ./venv/bin/python bin/sentinel.py
