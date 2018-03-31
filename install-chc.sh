@@ -72,14 +72,14 @@ prepdependencies() { #TODO: add error detection
 
 }
 	
-makefish(){
+makefish() {
 sudo apt-get install nano tmux build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev zip unzip cpulimit ufw git libzmq3-dev
 
 
 }
 
 
-makeboost(){
+makeboost() {
 	#Linux Distrobution specific (Ubuntu 14.04+ Debinan 7+)
 	sudo apt-get install 
 	sudo apt-get libboost-system-dev 
@@ -98,7 +98,7 @@ makeboost(){
 
 
 
-makeberklydb(){
+makeberklydb() {
 
 	# Linux (Ubuntu Only) BerkeleyDb Install
 	sudo apt-get install software-properties-common #on bitcoin instructions not dash?
@@ -110,7 +110,7 @@ makeberklydb(){
 
 
 
-makechaincoin(){
+makechaincoin() {
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
 	cd ChainCoin
 	./autogen.sh
@@ -141,4 +141,5 @@ install() {
 
 #main
 #default to --without-gui
-install --without-gui
+#install --without-gui
+install
