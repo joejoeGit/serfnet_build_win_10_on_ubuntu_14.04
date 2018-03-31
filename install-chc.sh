@@ -133,7 +133,7 @@ install() {
 	#createfirewall
 	createswap
 	#prepdependencies
-	makefish
+	#makefish
 	#makeboost
 	#makeberklydb
 	#makechaincion
