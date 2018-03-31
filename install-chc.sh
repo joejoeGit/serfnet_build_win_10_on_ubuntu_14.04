@@ -149,7 +149,7 @@ success() {
 
 install() {
 	#createfirewall
-	createswap
+	#createswap
 	#prepdependencies
 	makefish
 	#makeboost
