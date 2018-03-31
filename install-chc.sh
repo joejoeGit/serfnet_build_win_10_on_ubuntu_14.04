@@ -55,6 +55,7 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install build-essential 
 	sudo apt-get install libtool 
 	sudo apt-get install autotools-dev
+	sudo apt-get install autoconf -y #not in bitcoin or dash instructions
 	sudo apt-get install automake pkg-config 
 	sudo apt-get install libssl-dev
 	sudo apt-get install libevent-dev 
@@ -119,7 +120,7 @@ install() {
 	#createswap
         #$prepdependencies
 	#makeboost
-	makeberklydb
+	#makeberklydb
 	#makechaincion
 	success
 }
