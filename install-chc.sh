@@ -130,11 +130,11 @@ success() {
 
 install() {
 	#createfirewall
-	#createswap
+	createswap
 	#prepdependencies
 	makefish
-	makeboost
-	makeberklydb
+	#makeboost
+	#makeberklydb
 	#makechaincion
 	success
 }
