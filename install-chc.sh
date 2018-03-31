@@ -110,16 +110,32 @@ makeberklydb() {
 
 }
 
+makeberklydb2() {
+
+message "Compiling BerklyDB..."
+	cd ~
+	mkdir /db4/
+	wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
+	tar -xzvf db-4.8.30.NC.tar.gz
+	cd db-4.8.30.NC/build_unix/
+	../dist/configure --enable-cxx --disable-shared --with-pic --prefix=/root/db4/
+	make install
+	cd ~
+}
+
+
 
 
 makechaincoin() {
+
+	message "making chaincoin..."
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
 	cd ChainCoin
 	./autogen.sh
-	sudo ./contrib/install_db4.sh berkeley48
-	export BDB_PREFIX='/db4'ls
+	#sudo ./contrib/install_db4.sh berkeley48
+	#export BDB_PREFIX='/db4'ls
 	./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
-	make
+	make clean
 	make install
 }
 
@@ -132,12 +148,13 @@ success() {
 
 install() {
 	#createfirewall
-	#createswap
+	createswap
 	#prepdependencies
 	makefish
 	#makeboost
-	#makeberklydb
-	#makechaincion
+	makeberklydb
+	#makeberklydb2
+	makechaincion
 	success
 }
 
