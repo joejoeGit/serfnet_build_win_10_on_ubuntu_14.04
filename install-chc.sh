@@ -75,7 +75,7 @@ prepdependencies() { #TODO: add error detection
 makefish() {
 
 message "Making the fish ..."
-sudo apt-get install nano tmux build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev zip unzip cpulimit ufw git libzmq3-dev
+sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev zip unzip cpulimit ufw git libzmq3-dev -y
 
 
 }
@@ -104,7 +104,7 @@ makeberklydb() {
 
 	# Linux (Ubuntu Only) BerkeleyDb Install
 	sudo apt-get install software-properties-common #on bitcoin instructions not dash?
-	sudo add-apt-repository ppa:bitcoin/bitcoin
+	sudo add-apt-repository ppa:bitcoin/bitcoin -y
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev
 
@@ -128,13 +128,14 @@ message "Compiling BerklyDB..."
 
 makechaincoin() {
 
-	message "making the chaincoin..."
+	message "preparing the the chaincoin..."
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
 	cd ChainCoin
 	./autogen.sh
 	#sudo ./contrib/install_db4.sh berkeley48
 	#export BDB_PREFIX='/db4'ls
 	./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
+	message "making the chaincoin..."
 	make clean
 	make install
 }
