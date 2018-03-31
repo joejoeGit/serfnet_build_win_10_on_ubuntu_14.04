@@ -154,7 +154,7 @@ install() {
 	#makeboost
 	makeberklydb
 	#makeberklydb2
-	makechaincion
+	makechaincoin
 	success
 }
 
