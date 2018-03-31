@@ -128,7 +128,7 @@ message "Compiling BerklyDB..."
 
 makechaincoin() {
 
-	message "making chaincoin..."
+	message "making the chaincoin..."
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
 	cd ChainCoin
 	./autogen.sh
