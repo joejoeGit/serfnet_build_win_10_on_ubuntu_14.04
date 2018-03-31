@@ -53,7 +53,7 @@ prepdependencies() { #TODO: add error detection
 	#Linux Distrobution specific intallation (Unbuntu Debinan)
 	
 	sudo apt-get install build-essential 
-	sudo apt-get install libtool 
+	#sudo apt-get install libtool 
 	sudo apt-get install autotools-dev
 	sudo apt-get install automake 
         sudo apt-get install pkg-config 
@@ -125,10 +125,10 @@ success() {
 
 install() {
 	#createfirewall
-	#createswap
+	createswap
 	prepdependencies
-	#makeboost
-	#makeberklydb
+	makeboost
+	makeberklydb
 	#makechaincion
 	success
 }
