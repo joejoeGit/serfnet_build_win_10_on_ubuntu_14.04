@@ -55,13 +55,21 @@ prepdependencies() { #TODO: add error detection
 	sudo apt-get install build-essential 
 	sudo apt-get install libtool 
 	sudo apt-get install autotools-dev
-	sudo apt-get install autoconf -y #not in bitcoin or dash instructions
-	sudo apt-get install automake pkg-config 
+	sudo apt-get install automake 
+        sudo apt-get install pkg-config 
 	sudo apt-get install libssl-dev
 	sudo apt-get install libevent-dev 
 	sudo apt-get install bsdmainutils 
 	sudo apt-get install python3 
-	
+        
+	#Chao's extras
+	DEBIAN_FRONTEND=noninteractive apt-get -y -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" dist-upgrade
+	sudo apt-get install autoconf -y #not in bitcoin or dash instructions
+	sudo apt-get install ++-dev
+	sudo apt-get install -all-dev
+	sudo apt-get install -dev
+	sudo apt-get install ++
+
 }
 	
 
@@ -118,7 +126,7 @@ success() {
 install() {
 	#createfirewall
 	#createswap
-        #$prepdependencies
+        $prepdependencies
 	#makeboost
 	#makeberklydb
 	#makechaincion
