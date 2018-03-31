@@ -143,12 +143,51 @@ makechaincoin() {
 
 configurechaincoin() {
 
-#daemon=1
-#testnet=1
-#server=1
-#listen=1
-#debug=1
-#prematurewitness=1
+	message "Creating chaincoin.conf..."
+
+	MNPRIVKEY="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+	CONFDIR=~/.chaincoincore
+	CONFILE=$CONFDIR/chaincoin2.conf
+	if [ ! -d "$CONFDIR" ]; then mkdir $CONFDIR; fi
+	if [ $? -ne 0 ]; then error; fi
+	
+	mnip=$(curl -s https://api.ipify.org)
+
+ 	printf "%s\n"  
+       	       "daemon=1"
+	       "testnet=1"
+	       "debug=1"
+	       "prematurewitness=1"
+	       "rpcuser=tCHC123"
+	       "rpcpassword=tCHC123" 
+	       "rpcport=21995" 
+	       "rpcallowip=127.0.0.1" 
+	       "listen=1" 
+	       "server=1" 
+	
+	       
+	       "externalip=$mnip" 
+	       "bind=$mnip" 
+	       "masternode=1" 
+	       "masternodeprivkey=$MNPRIVKEY" 
+	       "masternodeaddr=$mnip:11994" 
+	       > $CONFILE
+
+       #chaincoind
+       #message "Wait 10 seconds for daemon to load..."
+       #sleep 20s
+       #MNPRIVKEY=$(chaincoin-cli masternode genkey)
+#	chaincoin-cli stop
+#	message "wait 10 seconds for deamon to stop..."
+#       sleep 10s
+#	sudo rm $CONFILE
+#	message "Updating chaincoin.conf..."
+#       printf "%s\n" "rpcuser=$rpcuser" "rpcpassword=$rpcpass" "rpcallowip=127.0.0.1" "listen=1" "server=1" "daemon=1" "maxconnections=256" "rpcport=11995" "externalip=$mnip" "bind=$mnip" "masternode=1" "masternodeprivkey=$MNPRIVKEY" "masternodeaddr=$mnip:11994" > $CONFILE
+
+
+
+
+
 #rpcuser=123
 #rpcpassword=123
 #rpcport=21995
@@ -189,11 +228,12 @@ install() {
 	#createfirewall
 	#createswap
 	#prepdependencies
-	makefish
+	#makefish
 	#makeboost
-	makeberklydb
+	#makeberklydb
 	#makeberklydb2
-	makechaincoin
+	#makechaincoin
+	configurechaincoin
 	success
 }
 
