@@ -141,6 +141,33 @@ makechaincoin() {
 }
 
 
+configurechaincoin() {
+
+
+
+}
+
+
+makesentinel() {
+	message "Makingin the crashy thing..." 
+	sudo apt-get update
+	sudo apt-get -y install python-virtualenv -y
+	cd ChainCoin
+	git clone https://github.com/chaincoin/sentinel.git && cd sentinel
+	virtualenv ./venv
+	./venv/bin/pip install -r requirements.txt
+	####set up the crontab
+	#crontab -e
+	#* * * * * cd /home/YOURUSERNAME/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1
+	###verify the test
+	#./venv/bin/py.test ./test
+	###configure the sentinel
+	##chaincoin_conf=/path/to/chaincoin.conf
+	###run the debug
+	#SENTINEL_DEBUG=1 ./venv/bin/python bin/sentinel.py
+
+}
+
 success() {
 
 	message "SUCCESS you ran some code, feel safe, be happy"
