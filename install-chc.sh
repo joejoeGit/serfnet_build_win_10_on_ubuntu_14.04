@@ -226,14 +226,14 @@ success() {
 
 install() {
 	#createfirewall
-	#createswap
-	#prepdependencies
-	#makefish
+	createswap
+	prepdependencies
+	makefish
 	#makeboost
-	#makeberklydb
+	makeberklydb
 	#makeberklydb2
-	#makechaincoin
-	configurechaincoin
+	makechaincoin
+	#configurechaincoin
 	success
 }
 
