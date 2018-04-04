@@ -237,8 +237,8 @@ success() {
 
 
 install() {
-	createfirewall
-	createswap
+	#createfirewall
+	#createswap
 	#prepdependencies
 	makefish
 	#makeboost
