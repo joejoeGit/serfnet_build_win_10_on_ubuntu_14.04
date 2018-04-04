@@ -24,7 +24,7 @@ On a brand new VPS copy and paste the following line and press ENTER:
 Examples:
 (ChainCoin Testnet) 
 
-curl https://raw.githubusercontent.com/seekthex/mnscripts/master/install-chc.sh | bash
+curl https://raw.githubusercontent.com/seekthex/buildserfnet/master/install-chc.sh | bash
 
 **********
 
@@ -37,6 +37,3 @@ SocialSend: <--- Keep it I dont want it!
 
 Many thanks for Fellowserf, Chaoabunga, Suprnurd, Hashunlimited and the CHC Community
 
-Check out my masters site!! I am just a young padawan            
-Live stream help and video for masternodes: https://www.youtube.com/c/chaoabunga
-1-liner masternode install scripts, faucets and more at: https://nodes.mn
