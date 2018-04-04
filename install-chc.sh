@@ -75,8 +75,27 @@ prepdependencies() { #TODO: add error detection
 makefish() {
 
 message "Making the fish ..."
-sudo apt-get install build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev libminiupnpc-dev zip unzip cpulimit ufw git libzmq3-dev -y
 
+sudo apt-get install build-essential -y
+sudo apt-get install autotools-dev -y
+sudo apt-get install pkg-config -y
+sudo apt-get install libssl-dev -y
+sudo apt-get install libevent-dev -y
+sudo apt-get install bsdmainutils -y
+sudo apt-get install libboost-system-dev -y
+sudo apt-get install libboost-filesystem-dev -y
+sudo apt-get install libboost-chrono-dev -y
+sudo apt-get install libboost-program-options-dev -y
+sudo apt-get install libboost-test-dev -y
+sudo apt-get install libboost-thread-dev -y
+sudo apt-get install libminiupnpc-dev -y
+sudo apt-get install zip -y
+sudo apt-get install unzip -y
+sudo apt-get install cpulimit -y
+sudo apt-get install ufw git -y
+sudo apt-get install libzmq3-dev -y
+
+message "Fish tastes good!!!"
 
 }
 
@@ -101,18 +120,23 @@ makeboost() {
 
 
 makeberklydb() {
+
         message "making the berkly..."
+	
 	# Linux (Ubuntu Only) BerkeleyDb Install
+	
 	sudo apt-get install software-properties-common -y #on bitcoin instructions not dash?
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
 	sudo apt-get update
 	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
+	
+	message "Berlkly done!!!"
 
 }
 
 makeberklydb2() {
 
-message "Compiling BerklyDB..."
+	message "Compiling BerklyDB..."
 	cd ~
 	mkdir /db4/
 	wget 'http://download.oracle.com/berkeley-db/db-4.8.30.NC.tar.gz'
@@ -122,7 +146,6 @@ message "Compiling BerklyDB..."
 	make install
 	cd ~
 }
-
 
 
 
