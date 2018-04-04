@@ -80,6 +80,7 @@ sudo apt-get install build-essential -y
 sudo apt-get install libtool -y
 sudo apt-get install autotools-dev -y
 sudo apt-get install automake
+sudo apt-get install autoconf -y
 sudo apt-get install pkg-config -y
 sudo apt-get install libssl-dev -y
 sudo apt-get install libevent-dev -y
