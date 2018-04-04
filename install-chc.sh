@@ -183,19 +183,13 @@ configurechaincoin() {
 	       "testnet=1"
 	       "debug=1"
 	       "prematurewitness=1"
+	       "listen=1" 
+	       "server=1" 
 	       "rpcuser=tCHC123"
 	       "rpcpassword=tCHC123" 
 	       "rpcport=21995" 
 	       "rpcallowip=127.0.0.1" 
-	       "listen=1" 
-	       "server=1" 
-	
-	       
-	       "externalip=$mnip" 
-	       "bind=$mnip" 
-	       "masternode=1" 
-	       "masternodeprivkey=$MNPRIVKEY" 
-	       "masternodeaddr=$mnip:11994" 
+	       "addnode=207.246.88.75"
 	       > $CONFILE
 
        #chaincoind
@@ -211,14 +205,6 @@ configurechaincoin() {
 
 
 
-
-
-#rpcuser=123
-#rpcpassword=123
-#rpcport=21995
-#addnode=207.246.88.75
-
-
 }
 
 
@@ -232,9 +218,6 @@ makesentinel() {
 	virtualenv ./venv
 	./venv/bin/pip install -r requirements.txt
 	#sudo echo "* * * * * cd /root/ChainCoin/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1" >> /tmp/crontab.SWy3wG/crontab
-
-	
-	
 	#* * * * * cd /root/ChainCoin/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1
 	###verify the test
 	#/root/ChainCoin/sentinel/venv/bin/py.test ./test
@@ -261,7 +244,7 @@ install() {
 	#makeberklydb2
 	makechaincoin
 	makesentinel
-	#configurechaincoin
+	configurechaincoin
 	success
 }
 
