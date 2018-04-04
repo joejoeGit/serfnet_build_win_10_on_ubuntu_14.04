@@ -75,11 +75,12 @@ prepdependencies() { #TODO: add error detection
 makefish() {
 
 message "Making the fish ..."
-
+sudo apt-get install nano -y
+sudo apt-get install tmux -y
 sudo apt-get install build-essential -y
 sudo apt-get install libtool -y
 sudo apt-get install autotools-dev -y
-sudo apt-get install automake
+sudo apt-get install automake -y
 sudo apt-get install autoconf -y
 sudo apt-get install pkg-config -y
 sudo apt-get install libssl-dev -y
@@ -95,7 +96,7 @@ sudo apt-get install libminiupnpc-dev -y
 sudo apt-get install zip -y
 sudo apt-get install unzip -y
 sudo apt-get install cpulimit -y
-sudo apt-get install ufw git -y
+sudo apt-get install ufw -y
 sudo apt-get install libzmq3-dev -y
 
 message "Fish tastes good!!!"
