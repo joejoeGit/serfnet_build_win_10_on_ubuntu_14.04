@@ -253,7 +253,7 @@ install() {
 	#createfirewall
 	#createswap
 	#prepdependencies
-	#makefish
+	makefish
 	#makeboost
 	#makeberklydb
 	#makeberklydb2
