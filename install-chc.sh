@@ -231,8 +231,10 @@ makesentinel() {
 	git clone https://github.com/chaincoin/sentinel.git && cd sentinel
 	virtualenv ./venv
 	./venv/bin/pip install -r requirements.txt
-	####set up the crontab
-	#crontab -e
+	sudo echo "* * * * * cd /root/ChainCoin/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1" >> /tmp/crontab.SWy3wG/crontab
+
+	
+	
 	#* * * * * cd /root/ChainCoin/sentinel && ./venv/bin/python bin/sentinel.py >/dev/null 2>&1
 	###verify the test
 	#/root/ChainCoin/sentinel/venv/bin/py.test ./test
@@ -253,11 +255,12 @@ install() {
 	#createfirewall
 	#createswap
 	#prepdependencies
-	makefish
+	#makefish
 	#makeboost
 	#makeberklydb
 	#makeberklydb2
-	makechaincoin
+	#makechaincoin
+	makesentinel
 	#configurechaincoin
 	success
 }
