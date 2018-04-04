@@ -260,7 +260,7 @@ install() {
 	#makeberklydb
 	#makeberklydb2
 	#makechaincoin
-	makesentinel
+	#makesentinel
 	#configurechaincoin
 	success
 }
