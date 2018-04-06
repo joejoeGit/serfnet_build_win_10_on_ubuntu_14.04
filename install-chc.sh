@@ -157,6 +157,7 @@ makechaincoin() {
 
 	message "preparing the the chaincoin..."
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
+	#mkdir db4
 	cd ChainCoin
 	./autogen.sh
 	#sudo ./contrib/install_db4.sh berkeley48
@@ -240,13 +241,13 @@ install() {
 	#createfirewall
 	#createswap
 	#prepdependencies
-	makefish
+	#makefish
 	#makeboost
-	makeberklydb
+	#makeberklydb
 	#makeberklydb2
 	makechaincoin
 	makesentinel
-	configurechaincoin
+	#configurechaincoin
 	success
 }
 
