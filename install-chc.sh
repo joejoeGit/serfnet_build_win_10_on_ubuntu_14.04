@@ -22,6 +22,7 @@ message "Making the fish ..."
 
 # swoardfish
 sudo apt-get update 
+sudo apt-get upgrade
 sudo apt-get install git -y
 
 sudo apt-get install nano -y
