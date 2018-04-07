@@ -85,7 +85,7 @@ makechaincoin() {
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
 	cd ChainCoin
 	./autogen.sh
-	./configure CPPFLAGS="-fPIC" --disable-tests --without-gui
+	./configure CPPFLAGS="-02 -fPIC" --disable-tests --without-gui
 	message "making the chaincoin..."
 	make clean
 	make install
