@@ -15,38 +15,6 @@ message() {
 }
 
 
-makefish() {
-	message "Making the fish ..."
-	# swoardfish
-	sudo apt-get update 
-	sudo apt-get upgrade
-	sudo apt-get install git -y
-	sudo apt-get install nano -y
-	sudo apt-get install tmux -y
-	sudo apt-get install build-essential -y
-	sudo apt-get install libtool -y
-	sudo apt-get install autotools-dev -y
-	sudo apt-get install automake -y
-	sudo apt-get install autoconf -y
-	sudo apt-get install pkg-config -y
-	sudo apt-get install libssl-dev -y
-	sudo apt-get install libevent-dev -y
-	sudo apt-get install bsdmainutils -y
-	sudo apt-get install libboost-system-dev -y
-	sudo apt-get install libboost-filesystem-dev -y
-	sudo apt-get install libboost-chrono-dev -y
-	sudo apt-get install libboost-program-options-dev -y
-	sudo apt-get install libboost-test-dev -y
-	sudo apt-get install libboost-thread-dev -y
-	sudo apt-get install libminiupnpc-dev -y
-	sudo apt-get install zip -y
-	sudo apt-get install unzip -y
-	sudo apt-get install cpulimit -y
-	sudo apt-get install ufw -y
-	message "Fish tastes good!!!"
-}
-
-
 make installgeneraldependencies()
 {
 	sudo apt-get update
@@ -60,17 +28,6 @@ installcrosscompilationtoolchain()
 	sudo apt install g++-mingw-w64-x86-64 -y
 }
 	
-
-makeberklydb() {
-	# Linux (Ubuntu Only) BerkeleyDb Install
-        message "making the berkly..."			
-	sudo apt-get install software-properties-common -y 
-	sudo add-apt-repository ppa:bitcoin/bitcoin -y
-	sudo apt-get update
-	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y	
-	message "Berlkly done!!!"
-}
-
 
 addtheqt() {
 	message "adding the QT stuff"
@@ -100,8 +57,6 @@ makechaincoin() {
 	message "sweet baby chain!!!"
 } 
 
-
-
 success() {
 
 	message "SUCCESS you ran some code, feel safe, be happy"
@@ -109,10 +64,9 @@ success() {
 
 
 install() {
-	makefish
+
 	installgeneraldependencies
 	installmingw-w64
-	makeberklydb
 	makechaincoin
 	success
 }
