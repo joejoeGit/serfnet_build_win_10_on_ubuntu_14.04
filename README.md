@@ -29,5 +29,5 @@ Chaincoin:  <--- Really PM me I would be happy to give you my address!!!
 
 SocialSend: <--- Keep it I dont want it!
 
-Many thanks for Fellowserf, Chaoabunga, Suprnurd, Hashunlimited and the CHC Community
+Many thanks to the CHC Community
 
