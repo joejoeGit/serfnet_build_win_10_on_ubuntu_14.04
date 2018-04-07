@@ -88,15 +88,22 @@ addtheqt() {
 makechaincoin() {
 
 	message "preparing the the chaincoin..."
-        git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
+        
+	
+	
+	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
 	cd ChainCoin
-	./autogen.sh
-	./contrib/install_db4.sh berkeley48
-	export BDB_PREFIX='/db4'
-	./configure CPPFLAGS="-I${BDB_PREFIX}/include/ -O2 -fPIC" LDFLAGS="-L${BDB_PREFIX}/lib/" --disable-tests	
-	message "making the chaincoin..."
-	make clean
-	make install
+	
+	
+	
+	
+	#./autogen.sh
+	#./contrib/install_db4.sh berkeley48
+	#export BDB_PREFIX='/db4'
+	#./configure CPPFLAGS="-I${BDB_PREFIX}/include/ -O2 -fPIC" LDFLAGS="-L${BDB_PREFIX}/lib/" --disable-tests	
+	#message "making the chaincoin..."
+	#make clean
+	#make install
 	message "sweet baby chain!!!"
 } 
 
