@@ -15,76 +15,74 @@ message() {
 }
 
 
-	
 makefish() {
-
-message "Making the fish ..."
-
-# swoardfish
-sudo apt-get update 
-sudo apt-get upgrade
-sudo apt-get install git -y
-
-sudo apt-get install nano -y
-sudo apt-get install tmux -y
-sudo apt-get install build-essential -y
-sudo apt-get install libtool -y
-sudo apt-get install autotools-dev -y
-sudo apt-get install automake -y
-sudo apt-get install autoconf -y
-sudo apt-get install pkg-config -y
-sudo apt-get install libssl-dev -y
-sudo apt-get install libevent-dev -y
-sudo apt-get install bsdmainutils -y
-sudo apt-get install libboost-system-dev -y
-sudo apt-get install libboost-filesystem-dev -y
-sudo apt-get install libboost-chrono-dev -y
-sudo apt-get install libboost-program-options-dev -y
-sudo apt-get install libboost-test-dev -y
-sudo apt-get install libboost-thread-dev -y
-sudo apt-get install libminiupnpc-dev -y
-sudo apt-get install zip -y
-sudo apt-get install unzip -y
-sudo apt-get install cpulimit -y
-sudo apt-get install ufw -y
-
-message "Fish tastes good!!!"
+	message "Making the fish ..."
+	# swoardfish
+	sudo apt-get update 
+	sudo apt-get upgrade
+	sudo apt-get install git -y
+	sudo apt-get install nano -y
+	sudo apt-get install tmux -y
+	sudo apt-get install build-essential -y
+	sudo apt-get install libtool -y
+	sudo apt-get install autotools-dev -y
+	sudo apt-get install automake -y
+	sudo apt-get install autoconf -y
+	sudo apt-get install pkg-config -y
+	sudo apt-get install libssl-dev -y
+	sudo apt-get install libevent-dev -y
+	sudo apt-get install bsdmainutils -y
+	sudo apt-get install libboost-system-dev -y
+	sudo apt-get install libboost-filesystem-dev -y
+	sudo apt-get install libboost-chrono-dev -y
+	sudo apt-get install libboost-program-options-dev -y
+	sudo apt-get install libboost-test-dev -y
+	sudo apt-get install libboost-thread-dev -y
+	sudo apt-get install libminiupnpc-dev -y
+	sudo apt-get install zip -y
+	sudo apt-get install unzip -y
+	sudo apt-get install cpulimit -y
+	sudo apt-get install ufw -y
+	message "Fish tastes good!!!"
 }
 
 
-makeberklydb() {
+make installgeneraldependencies()
+{
+	sudo apt-get update
+	sudo apt-get upgrade
+	sudo apt install build-essential libtool autotools-dev automake pkg-config bsdmainutils curl git -y
+}
 
-        message "making the berkly..."
+
+installcrosscompilationtoolchain()
+{
+	sudo apt install g++-mingw-w64-x86-64 -y
+}
 	
+
+makeberklydb() {
 	# Linux (Ubuntu Only) BerkeleyDb Install
-	
+        message "making the berkly..."			
 	sudo apt-get install software-properties-common -y 
 	sudo add-apt-repository ppa:bitcoin/bitcoin -y
 	sudo apt-get update
-	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y
-	
+	sudo apt-get install libdb4.8-dev libdb4.8++-dev -y	
 	message "Berlkly done!!!"
-
 }
 
+
 addtheqt() {
-
-message "adding the QT stuff"
-
-# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
-sudo apt-get install libminiupnpc-dev -y
-
-# zero message queue
-sudo apt-get install libzmq3-dev -y
-
-# QT5 - QT Wallet
-sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler -y
-
-# QR
-sudo apt-get install libqrencode-dev -y
-
-message "cutie cutie cutie"
-
+	message "adding the QT stuff"
+	# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
+	sudo apt-get install libminiupnpc-dev -y
+	# zero message queue
+	sudo apt-get install libzmq3-dev -y
+	# QT5 - QT Wallet
+	sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler -
+	# QR
+	sudo apt-get install libqrencode-dev -y
+	message "cutie cutie cutie"
 }
 
 makechaincoin() {
@@ -112,6 +110,8 @@ success() {
 
 install() {
 	makefish
+	installgeneraldependencies
+	installmingw-w64
 	makeberklydb
 	makechaincoin
 	success
