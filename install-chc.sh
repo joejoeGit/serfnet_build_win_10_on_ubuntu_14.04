@@ -6,7 +6,6 @@
 #TODO: everything
 #TODO: 
 
-
 message() {
 
 	echo "╒════════════════════════════════════════════════════════>>>"
@@ -17,6 +16,7 @@ message() {
 
 make installgeneraldependencies()
 {
+	message "installing dependencies"
 	sudo apt-get update
 	sudo apt-get upgrade
 	sudo apt install build-essential libtool autotools-dev automake pkg-config bsdmainutils curl git -y
@@ -25,12 +25,13 @@ make installgeneraldependencies()
 
 installcrosscompilationtoolchain()
 {
+	message "installing the tool chain"
 	sudo apt install g++-mingw-w64-x86-64 -y
 }
 	
 
-addtheqt() {
-	message "adding the QT stuff"
+installmoreqtstuff() {	
+	message "installing more qt stuff"
 	# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
 	sudo apt-get install libminiupnpc-dev -y
 	# zero message queue
@@ -38,12 +39,10 @@ addtheqt() {
 	# QT5 - QT Wallet
 	sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler -
 	# QR
-	sudo apt-get install libqrencode-dev -y
-	message "cutie cutie cutie"
+	sudo apt-get install libqrencode-dev -y	
 }
 
 makechaincoin() {
-
 	message "preparing the the chaincoin..."
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
 	sudo chmod -R a+rw ChainCoin
@@ -57,6 +56,7 @@ makechaincoin() {
 	message "sweet baby chain!!!"
 } 
 
+
 success() {
 
 	message "SUCCESS you ran some code, feel safe, be happy"
@@ -64,13 +64,14 @@ success() {
 
 
 install() {
-
+        cd ~
 	installgeneraldependencies
+	installcrosscompilationtoolchain
+	installmoreqtstuff
 	installmingw-w64
 	makechaincoin
 	success
 }
 
 #main
-
 install
