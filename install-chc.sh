@@ -21,6 +21,7 @@ makefish() {
 message "Making the fish ..."
 
 # swoardfish
+sudo apt-get update 
 sudo apt-get install git -y
 sudo apt-get install nano -y
 sudo apt-get install tmux -y
