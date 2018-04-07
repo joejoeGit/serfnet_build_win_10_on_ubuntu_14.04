@@ -45,20 +45,7 @@ sudo apt-get install unzip -y
 sudo apt-get install cpulimit -y
 sudo apt-get install ufw -y
 
-# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
-sudo apt-get install libminiupnpc-dev -y
-
-# zero message queue
-sudo apt-get install libzmq3-dev -y
-
-# QT5 - QT Wallet
-sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler -y
-
-# QR
-sudo apt-get install libqrencode-dev -y
-
 message "Fish tastes good!!!"
-
 }
 
 
@@ -77,7 +64,25 @@ makeberklydb() {
 
 }
 
+addtheqt() {
 
+message "adding the QT stuff"
+
+# upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
+sudo apt-get install libminiupnpc-dev -y
+
+# zero message queue
+sudo apt-get install libzmq3-dev -y
+
+# QT5 - QT Wallet
+sudo apt-get install libqt5gui5 libqt5core5a libqt5dbus5 qttools5-dev qttools5-dev-tools libprotobuf-dev protobuf-compiler -y
+
+# QR
+sudo apt-get install libqrencode-dev -y
+
+message "cutie cutie cutie"
+
+}
 
 makechaincoin() {
 
