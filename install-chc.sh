@@ -89,6 +89,7 @@ makechaincoin() {
 
 	message "preparing the the chaincoin..."
 	git clone https://github.com/ChainCoin/ChainCoin.git -b Chaincoin_0.16-dev
+	sudo chmod -R a+rw ChainCoin
 	cd ChainCoin
 	PATH=$(echo "$PATH" | sed -e 's/:\/mnt.*//g') # strip out problematic Windows %PATH% imported var
 	cd depends
