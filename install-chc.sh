@@ -46,7 +46,7 @@ sudo apt-get install cpulimit -y
 sudo apt-get install ufw -y
 
 # upnc - Optional (see --with-miniupnpc and --enable-upnp-default):
-sudo apt-get install libminiupnpc-dev
+sudo apt-get install libminiupnpc-dev -y
 
 # zero message queue
 sudo apt-get install libzmq3-dev -y
