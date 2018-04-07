@@ -2,9 +2,9 @@
 mnscripts
 ---------
 Version: 0.0.0.1
-Scripts for installing masternode coins such as ChainCoin Testnet easily. Installs Masternode and most likely does it wrong for you.
+Scripts for simply using Ubuntu to create a Windows 10 64-bit wallet
 
-But dont try it, cause it does not work... yet! 
+Dont know if it works yet... yet! 
 
 Experimental script, use at your own risk!!!
 
@@ -16,22 +16,16 @@ Supported coins
 ---------------
 Tested Systems: 
 ---------------
--None
+-None 
 
-Please choose a test system from above.
-On a brand new VPS copy and paste the following line and press ENTER:
-
-Examples:
-(ChainCoin Testnet) 
-
-curl https://raw.githubusercontent.com/seekthex/buildserfnet/master/install-chc.sh | bash
+curl https://raw.githubusercontent.com/seekthex/serfnet_build_win_10_on_ubuntu_14.04/master/install-chc.sh | bash
 
 **********
 
 Donations:  
 Bitcoin:    <--- Really you are too kind    
 
-Chaincoin:  
+Chaincoin:  <--- Really PM me I would be happy to give you my address!!!
 
 SocialSend: <--- Keep it I dont want it!
 
