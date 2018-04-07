@@ -14,7 +14,7 @@ message() {
 }
 
 
-make installgeneraldependencies()
+installgeneraldependencies()
 {
 	message "installing dependencies"
 	sudo apt-get update
